@@ -11,6 +11,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
   />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=McLaren:wght@400;700&display=swap"
     rel="stylesheet"
@@ -23,11 +24,17 @@
     .btn-color:hover {
       background-color: #c84869;
     }
+    nav{
+      margin-top: 10px;
+    }
     .navbar-brand {
       font-family: sans-serif;
     }
     .navbar-nav .nav-link {
       color: #303030;
+      margin-left: 30px;
+      font-size: 18px;
+      font-weight: 700;
       font-family: 'McLaren', cursive;
     }
     .nav-link.active {
@@ -37,18 +44,23 @@
       color: #c84869;
     }
     .bg-images{
+      margin-top: 50px;
       background: url('css/images/SL-091823-63290-31.jpg');
       position: relative;
       background-size: cover;
       width: 100%;
-      height: 300px;
+      height: 400px;
+    }
+    .breaker{
+      width: 100%;
+      height: 30px;
     }
     .btn-color{
-        background-color: #ffc7c7;
+        background-color: #F38068;
         color: #fff;
     }
     .btn-color:hover{
-        outline: 1px solid #ffc7c7;
+        outline: 1px solid #F38068;
         background-color: #fff;
         color: #010100;
     }
@@ -57,18 +69,7 @@
     }
     .col-width{
       width: max-content;
-    }
-    .colu-1{
-      background-color: #c84869;
-      color: #fff;
-    }
-    .colu-2{
-      background-color: #2a70de;
-      color: #fff;
-    }
-    .colu-3{
-      background-color: #213e8c;
-      color: #fff;
+      height: 120px;
     }
     .feature-margin{
       display: flex;
@@ -76,21 +77,33 @@
       justify-content: center;
     }
     .col-color-1{
+        height: 100px;
         background-color: #c84869;
         color: #fff;
     }
     .col-color-2{
+      height: 100px;
         background-color: #2a70de;
         color: #fff;
     }
     .col-color-3{
+      height: 100px;
         background-color: #213e8c;
         color: #fff;
     }
     .border-images{
-        /* border: 0px 7px 7px 0 2px #010100 solid;
-        outline: 5px solid 0 2px 2px 0; */
+        border-color: #010100;
+        border-width: 7px;
+        border-style: solid;
+        border-top: 0;
+        border-left: 7px;
+        margin-left: -70px;
     }
+    .separator {
+    border-left: 4px solid #000;
+    height: 431px;
+    margin: 0 15px;
+}
     @media (max-width: 992px) {
       .navbar-nav {
         text-align: center;
@@ -99,42 +112,49 @@
         margin-right: 0;
         margin-left: 0;
       }
+      .border-images{
+        margin-left: 23px;
+      }
+      .separator{
+        display: none;
+      }
+      .margin-top-class{
+        margin-top: 40px;
+      }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg text-dark">
+  <nav class="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
     <div class="container-fluid">
-      <a class="navbar-brand text-white fw-bold p-md-4 p-lg-5 fs-2" href="#">Aid Connect</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <a class="navbar-brand" href="#">Aid Connect</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav text-white">
-          <li class="nav-item">
-            <a class="nav-link active fw-bold ms-3 fs-5" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold ms-3 fs-5" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold ms-3 fs-5" href="#">Get Involved</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold ms-3 fs-5" href="#">News</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-bold ms-3 me-5 fs-5" href="#">Events</a>
-          </li>
-        </ul>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+        <div class="offcanvas-header">
+          <!-- <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5> -->
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Donate</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Need Help</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">News</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -149,40 +169,47 @@
       </div>
   </section>
   </div>
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-lg-6 ml-2">
-        <h1 class="display-5 fst-italic fw-bold h1-color lh-1 mb-3">Feeding Orpans and Disaster Relief</h1>
-        <p class="lead fs-4 fw-normal">Ensuring every child receives nutritious meals and the care they deserve. Mobilizing support and resources to provide immediare assistance during times of crisis</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a href="#" class="btn btn-color btn-lg px-4">Join Now</a>
+  <div class="breaker"></div>
+  <!--Join Us-->
+  <div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <img src="css/images/66113.jpg" class="d-block mx-auto img-fluid border-images" alt="" width="700" height="500" loading="lazy">
         </div>
-      </div>
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img src="css/images/66113.jpg" class="d-block mx-lg-auto img-fluid ml-2 border-images" alt="" width="700" height="500" loading="lazy">
-      </div>
+        <div class="col-lg-1 d-flex justify-content-center">
+            <div class="separator"></div>
+        </div>
+        <div class="col-lg-5">
+            <h1 class="display-5 fst-italic fw-bold h1-color lh-1 mb-3">Feeding Orphans and Disaster Relief</h1>
+            <p class="lead fs-4 fw-normal">Ensuring every child receives nutritious meals and the care they deserve. Mobilizing support and resources to provide immediate assistance during times of crisis.</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <a href="#" class="btn btn-color px-4">Join Now</a>
+            </div>
+        </div>
     </div>
-  </div>
-  <!--Hero Sections-->
-  <div class="container text-center">
-    <div class="container text-center">
-      <div class="row">
-          <div class="col col-color-1">
-              <h2>Our Mission</h2>
-              <p>Our Goal, Visual & Commitment.</p>
-          </div>
-          <div class="col col-color-2">
-              <h2>Our Events</h2>
-              <p>Register and Help other</p>
-          </div>
-          <div class="col col-color-3">
-              <h2>Get Involved</h2>
-              <p>Volunteer, Participate or Donate</p>
-          </div>
-      </div>
+</div>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+      <div class="border" style="width: 100%; height: 5px; background-color: #010100;"></div>
   </div>
 </div>
-
+<!--Hero Sections-->
+<div class="container px-4 py-5" id="featured-3">
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="feature col col-color-1 text-center">
+      <h3 class="fs-2 mt-3">Our Mission</h3>
+      <p  class="">Our Goal, Visual & Commitment.</p>
+    </div>
+    <div class="feature col col-color-2 text-center">
+      <h3 class="fs-2 mt-3">Our events</h3>
+      <p class="">Register and Help</p>
+    </div>
+    <div class="feature col col-color-3 text-center">
+      <h3 class="fs-2 mt-3">Get Involder</h3>
+      <p>Volunteer, Participate or Donate</p>
+    </div>
+  </div>
+</div>
 <!--New Post-->
 <div class="container px-4 py-5" id="custom-cards">
   <h2 class="pb-2 border-bottom">Blogs</h2>
@@ -241,6 +268,41 @@
     <a href="#" class="btn btn-outline-secondary fs-5 fw-bold">Read More</a>
 </div>
 </div>
+<!--Need Help and Contact Now-->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="border" style="width: 100%; height: 5px; background-color: #010100;"></div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row align-items-center">
+    <div class="col-lg-5">
+      <h1 class="display-5 fst-italic fw-bold h1-color lh-1 mb-3">Need Help</h1>
+      <p class="lead fs-4 fw-normal">Need assistance? Fill out the form below with your details, and our team will get in touch with you as soon as possible to offer the support you need.</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a href="#" class="btn btn-color px-4">Join Now</a>
+      </div>
+    </div>
+    <div class="col-lg-1 d-flex justify-content-center">
+      <div class="separator"></div>
+    </div>
+    <div class="col-lg-5">
+    <h1 class="display-5 fst-italic fw-bold h1-color lh-1 mb-3 margin-top-class">Contact Us</h1>
+    <p class="lead fs-4 fw-normal">Have questions or need support? Contact us today—we're here to help with any inquiries or concerns you may have.</p>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+      <a href="#" class="btn btn-color px-4">Contact Now</a>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="border" style="width: 100%; height: 5px; background-color: #010100;"></div>
+  </div>
+</div>
+
+</body>
 <script
     src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz4fnFO9Q60jb9p8D9b7Cz9AheXyfp2c2q1Gm8BBpKSRxK8+5s0wRfiRH"
@@ -251,5 +313,4 @@
     integrity="sha384-7Cmo1y5fq0i52cLlsM8u6wFx8djL2uExlHRCTNT1ggTAp5DkP/ttJ1f5B5MkXVw6"
     crossorigin="anonymous"
   ></script>
-</body>
 </html>
