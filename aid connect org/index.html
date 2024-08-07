@@ -17,8 +17,9 @@
     rel="stylesheet"
   />
   <style>
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
     body {
-      background-color: #ffe7e3;
+      background-color: #fff;
     }
     .btn-color,
     .btn-color:hover {
@@ -67,6 +68,35 @@
     .h1-color{
         color: #f38068;
     }
+    .social-icons{
+        height: 240px;
+        width: 80px;
+        background-color: #E7E3FF;
+        position: fixed;
+        top: 300px;
+        right: 0;
+    }
+    .social-icons .icons ul{
+        list-style: none;
+        margin-left: -21px;
+        margin-top: 10px;
+
+    }
+    .social-icons .icons ul .one,
+    .social-icons .icons ul .two{
+        margin: 12px auto;
+    }
+    .social-icons .icons ul li i{
+        padding: 8px;
+        width: 120px;
+        height: 60px;
+        color: #2c2c2c;
+    }
+    .social-icons .icons ul li i:hover{
+        background-color: #2c2c2c;
+        color: #fff;
+        border-radius: 12px;
+    }
     .col-width{
       width: max-content;
       height: 120px;
@@ -103,7 +133,33 @@
     border-left: 4px solid #000;
     height: 431px;
     margin: 0 15px;
-}
+    }
+    .donate-btn{
+      background-color: #c84869;
+      color: #fff;
+    }
+    .donate-btn:hover{
+      background-color: #cf204c;
+      color: #ffe7e3;
+    }
+    .top-buttnon{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #c84869;
+        position: fixed;
+        z-index: 99;
+        bottom: 10px;
+        right: 20px;
+        margin-top: 10px;
+    }
+    .btn-top{
+      text-decoration: none;
+      font-size: 36px;
+      font-weight: 900;
+      color: #fff;
+      margin-left: 12px;
+    }
     @media (max-width: 992px) {
       .navbar-nav {
         text-align: center;
@@ -121,6 +177,18 @@
       .margin-top-class{
         margin-top: 40px;
       }
+      .social-icons{
+            top: 200px;
+            height: 181px;
+            width: 55px;
+            z-index: 99;
+      }
+        .icons ul{
+            margin-left: -25px;
+        }
+        .volunteer-img{
+        margin-left: 25px;
+        }
     }
   </style>
 </head>
@@ -170,6 +238,16 @@
   </section>
   </div>
   <div class="breaker"></div>
+  <!-- social-icons -->
+  <!-- <div class="social-icons">
+    <div class="icons">
+        <ul>
+            <li><i class="bi bi-facebook fs-1"></i></li>
+            <li class="one"><i class="bi bi-instagram fs-1"></i></li>
+            <li class="two"><i class="bi bi-twitter-x fs-1"></i></li>
+        </ul>
+    </div>
+</div> -->
   <!--Join Us-->
   <div class="container mt-5">
     <div class="row align-items-center">
@@ -210,10 +288,32 @@
     </div>
   </div>
 </div>
+<!-- donate-now -->
+<div class="container col-xxl-8 px-4 py-5 border rounded-3">
+  <div class="row flex-lg-row align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="css/images/helping-hands-volunteer-support-community-service-graphic.jpg" class="d-block mx-lg-auto img-fluid volunteer-img"/>
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Join Us</h1>
+      <p class="lead">
+        Aid Connect provides food and resources during disasters. We work
+        with NGOs to distribute surplus food to local orphanages and
+        communities in need. Your support helps us deliver vital aid and
+        empower women and girls in tough times.
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" class="btn donate-btn btn-lg px-4 me-md-2">
+          Donate now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!--New Post-->
 <div class="container px-4 py-5" id="custom-cards">
   <h2 class="pb-2 border-bottom">Blogs</h2>
-
   <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
     <div class="col">
       <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
@@ -268,19 +368,17 @@
     <a href="#" class="btn btn-outline-secondary fs-5 fw-bold">Read More</a>
 </div>
 </div>
+<div class="border-bottom"></div>
+
+
 <!--Need Help and Contact Now-->
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="border" style="width: 100%; height: 5px; background-color: #010100;"></div>
-  </div>
-</div>
-<div class="container mt-5">
+<div class="container mt-5 border-bottom">
   <div class="row align-items-center">
     <div class="col-lg-5">
       <h1 class="display-5 fst-italic fw-bold h1-color lh-1 mb-3">Need Help</h1>
       <p class="lead fs-4 fw-normal">Need assistance? Fill out the form below with your details, and our team will get in touch with you as soon as possible to offer the support you need.</p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a href="#" class="btn btn-color px-4">Join Now</a>
+        <a href="get-help.html" class="btn btn-color px-4" _blank>Join Now</a>
       </div>
     </div>
     <div class="col-lg-1 d-flex justify-content-center">
@@ -296,10 +394,62 @@
   </div>
 </div>
 
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="border" style="width: 100%; height: 5px; background-color: #010100;"></div>
+<!--Upcoming Events-->
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+  <h1 class="display-4 fw-bold fst-italic">Upcoming Events</h1>
+  <div class="col-lg-6 mx-auto mt-5">
+    <p class="lead mb-4 fs-3"><a href="#" class= "link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Upcoming Event One</a></p>
+    <p class="lead mb-4 fs-3"><a href="#" class= "link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Upcoming Event Two</a></p>
+    <p class="lead mb-4 fs-3"><a href="#" class= "link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Upcoming Event Three</a></p>
   </div>
+</div>
+<!-- footer -->
+<div class="container">
+  <footer class="py-5">
+    <div class="row">
+      <div class="col-6 col-md-2 mb-3">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Privacy Policy</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Contact Us</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Food Sharing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Disaster Relief</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Blog & News</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 offset-md-2 mb-3">
+        <form>
+          <h5>Subscribe to our newsletter</h5>
+          <p>Get Notified</p>
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Email address</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+            <button class="btn btn-primary" type="button">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>© 2024 Aid Connect Inc. All rights reserved.</p>
+      <ul class="list-unstyled d-flex">
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+        <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+<div class="top-buttnon">
+  <a href="#" class="btn-top">^</a>
 </div>
 
 </body>
