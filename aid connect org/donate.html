@@ -16,7 +16,7 @@
     rel="stylesheet"
   />
   <style>
-        nav{
+    nav{
       margin-top: 10px;
     }
     .navbar-brand {
@@ -43,6 +43,25 @@
         align-items: center;
         margin: 60px auto;
     }
+    .margin-right{
+      margin: 0 auto 0 200px;
+    }
+    .btn-color{
+      background-color: #c84869;
+      color: #fff;
+    }
+    .btn-color:hover,
+    .btn-color:active{
+      color: #c84869;
+      background-color: #fff;
+      border: 2px solid #c84869;
+      transition: background-color 0.2s ease-in-out;
+    }
+    @media (max-width: 992px){
+      .margin-right{
+        margin: 0 auto 0 30px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -60,10 +79,10 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#">Donate</a>
+                  <a class="nav-link active" aria-current="page" href="#">Donate</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="#">Need Help</a>
@@ -81,6 +100,9 @@
       </nav>
       <!-- login -->
       <div class="px-4 pt-5 my-5">
+        {% if msg: %}
+        <h1 class="display-4 fw-bold text-center">Thanks for your help</h1>
+        {% else %}
         <h1 class="display-4 fw-bold text-center">
             Help Us Support Those in Need
         </h1>
@@ -89,14 +111,14 @@
         </div>
         <div class="overflow-hidden">
           <div class="container px-1">
-            <form class="row g-3 w-75 d-flex justify-content-center">
+            <form class="row g-3 w-75 margin-right" action="/donate-details" method="post">
                 <div class="col-12">
-                  <label for="inputEmail4" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="inputEmail4" />
+                  <label for="inputEmail4" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="inputEmail4" name = "name"/>
                 </div>
                 <div class="col-12">
                   <label for="inputPassword4" class="form-label">Phone Number</label>
-                  <input type="text" class="form-control" id="inputPassword4" />
+                  <input type="text" class="form-control" id="inputPassword4" name="phno"/>
                 </div>
                 <div class="col-12">
                   <label for="inputAddress" class="form-label">Address</label>
@@ -105,41 +127,32 @@
                     class="form-control"
                     id="inputAddress"
                     placeholder="1234 Main St"
+                    name="address"
                   />
                 </div>
                 <div data-mdb-input-init class="form-outline mb-4">
                   <label for="inputAddress" class="form-label">Donate Resources</label>
-                  <textarea class="form-control" id="form4Example3" rows="4" placeholder="Each of the is should seperated by comma"></textarea>
+                  <textarea class="form-control" id="form4Example3" rows="4" placeholder="Each of the should seperated by comma with quantity" name="textarea"></textarea>
                 </div>
                 <div class="col-12">
                   <label for="inputCity" class="form-label">City</label>
-                  <input type="text" class="form-control" id="inputCity" />
+                  <input type="text" class="form-control" id="inputCity" name="city"/>
                 </div>
                 <div class="col-12">
-                  <label for="inputState" class="form-label">State</label>
-                  <select id="inputState" class="form-select">
-                    <option selected="">Choose...</option>
-                    <option>...</option>
-                  </select>
+                  <label for="inputCity" class="form-label">State</label>
+                  <input type="text" class="form-control" id="inputCity" name="state"/>
                 </div>
                 <div class="col-12">
-                  <label for="inputZip" class="form-label">Zip</label>
-                  <input type="text" class="form-control" id="inputZip" />
+                  <label for="inputZip" class="form-label">pincode</label>
+                  <input type="text" class="form-control" id="inputZip" name="pincode"/>
                 </div>
                 <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck" />
-                    <label class="form-check-label" for="gridCheck"> Check me out </label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <button type="submit" class="btn btn-outline-secondary">Donate</button>
+                  <button type="submit" class="btn btn-lg btn-color" name="btn">Donate</button>
                 </div>
               </form>
         </div>
       </div>
-
-
+      {% endif %}
 <div class="margin-top" style="margin-top: 60px;"></div>
       <!-- footer -->
       <div class="container">
@@ -186,5 +199,10 @@
           </div>
         </footer>
       </div>
+      </div>
     </body>
-</html>
+<script>
+
+</script>
+
+    </html>
