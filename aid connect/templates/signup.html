@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        body{
+            background-color: #3b4465;
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+            margin: 100px auto;
+        }
+        .form{
+            margin: 60px auto;
+            width: 260px;
+            height: max-content;
+            padding: 30px 25px;
+            background-color: #fff;
+            border: 2px solid #aeaeae;
+        }
+        .form .input-field{
+            margin-bottom: 20px;
+        }
+        .input-field label {
+            font-size: 14px;
+            color: #a1b4b4;
+        }
+        .input-field .email-name,
+        .input-field .email-input, 
+        .input-field .password-input{
+            display: block;
+            width: 82%;
+            margin-top: 8px;
+            padding-right: 15px;
+            padding-left: 15px;
+            font-size: 16px;
+            line-height: 40px;
+            color: #3b4465;
+            background: #eef9fe;
+            border: 1px solid #cddbef;
+            border-radius: 2px;
+        }
+        .login{
+            color: #fbfdff;
+            background: #a7e245;
+            display: block;
+            min-width: 120px;
+            margin: 30px auto 10px;
+            font-size: 18px;
+            line-height: 40px;
+            border-radius: 25px;
+            border: none;
+        }
+        .toggle-style {
+            margin: 10px auto;
+            cursor: pointer;
+        }
+        span{
+            color: #a1b4b4;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>Signup to Aid Connects</header>
+    <div class="form">
+        <form action="">
+            <div class="input-field">
+                <label for="">Name</label><br>
+                <input type="text" name="email" class="email-name">
+            </div>
+            <div class="input-field">
+                <label for="">Email Id</label><br>
+                <input type="text" name="email" class="email-input">
+            </div>
+            <div class="input-field">
+                <label for="">Password</label><br>
+                <input type="password" name="password" class="password-input">
+            </div>
+            <input type="checkbox" class="togglePassword toggle-style"><span>show password</span>
+            <button type="submit" class="login">
+               Signup
+            </button>
+        </form>
+    </div>
+</body>
+<script>
+    const passwordField = document.querySelector('.password-input');
+    const togglePassword = document.querySelector('.togglePassword');
+    togglePassword.addEventListener('change', function() {
+        if (this.checked) {
+            passwordField.type = 'text';
+        } else {
+            passwordField.type = 'password';
+        }
+    });
+</script>
+</html>
