@@ -42,14 +42,15 @@ def get_help():
         username = request.form['name']
         user_phno = request.form['phno']
         user_email = request.form['email']
-        address = request.form['add']
+        address = request.form['address']
         city = request.form['city']
-        dis = request.form['dis']
+        dis = request.form['district']
         state = request.form['state']
-        zipcode = request.form['code']
+        zipcode = request.form['zip']
         user_add = f"{address}, {city}, {dis}, {state}, code - {zipcode}"
         
         new_details = Details(name=username, phno=user_phno, mail=user_email, address=user_add)
+        
         try:
             with app.app_context():
                 db.session.add(new_details)
